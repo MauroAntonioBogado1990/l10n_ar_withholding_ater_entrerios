@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_iibb_ater_entrerios_form" model="ir.ui.view">
+        <field name="name">res.partner.form.ater.entrerios</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="l10n_ar_partner.view_partner_property_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='fiscal_data']" position="after">
+                <page name="fiscal_data_ater_er" string="Ret./Perc. IIBB ATER Entre Ríos">
+                    <group>
+                        <group string="Retenciones">
+                            <field name="alicuota_ret_entrerios_6"
+                                   help="Marcar si el proveedor no acredita inscripción en IIBB Entre Ríos. Alícuota: 6%"/>
+                            <field name="alicuota_ret_entrerios"
+                                   help="Alícuota personalizada. Si está en 0 y no tiene penalidad, se aplica 3% general ATER."/>
+                        </group>
+                        <group string="Percepciones">
+                            <field name="alicuota_per_entrerios_6"
+                                   help="Marcar si el cliente no acredita inscripción en IIBB Entre Ríos. Alícuota: 6%"/>
+                            <field name="alicuota_per_entrerios"
+                                   help="Alícuota personalizada. Si está en 0 y no tiene penalidad, se aplica 3% general ATER."/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

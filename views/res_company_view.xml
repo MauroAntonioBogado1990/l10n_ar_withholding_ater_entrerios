@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_company_ater_entrerios_inherit_form">
+            <field name="name">res.company.form.ater.entrerios.inherit</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="model">res.company</field>
+            <field name="arch" type="xml">
+                <field name="currency_id" position="after">
+                    <div class="col-12 col-lg-6 o_setting_box" id="tax_per_ater_entrerios">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label" style="text-align:center; font-size:20px;">
+                                Entre Ríos (ATER)
+                            </span>
+                        </div>
+                    </div>
+                    <field name="tax_per_ater_entrerios"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

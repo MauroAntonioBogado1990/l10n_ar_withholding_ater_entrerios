@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_account_export_ater_entrerios_form" model="ir.ui.view">
+            <field name="name">account.export.ater.entrerios.form</field>
+            <field name="model">account.export.ater.entrerios</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="compute_ater_entrerios_data"
+                                string="Generar TXT ATER Entre Ríos"
+                                type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="tax_withholding"/>
+                        </group>
+                        <group string="Archivo Retenciones">
+                            <field name="export_ater_filename_ret" invisible="1"/>
+                            <field name="export_ater_file_ret"
+                                   widget="binary"
+                                   filename="export_ater_filename_ret"/>
+                            <field name="export_ater_data_ret" readonly="1"/>
+                        </group>
+                        <group string="Archivo Percepciones">
+                            <field name="export_ater_filename_per" invisible="1"/>
+                            <field name="export_ater_file_per"
+                                   widget="binary"
+                                   filename="export_ater_filename_per"/>
+                            <field name="export_ater_data_per" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_account_export_ater_entrerios_list" model="ir.ui.view">
+            <field name="name">account.export.ater.entrerios.list</field>
+            <field name="model">account.export.ater.entrerios</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="action_account_export_ater_entrerios" model="ir.actions.act_window">
+            <field name="name">Exportaciones ATER Entre Ríos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">account.export.ater.entrerios</field>
+            <field name="view_mode">list,form</field>
+        </record>
+
+        <menuitem id="menu_account_export_ater_entrerios"
+                  action="action_account_export_ater_entrerios"
+                  parent="l10n_ar.account_reports_ar_statements_menu"
+                  sequence="7"/>
+
+    </data>
+</odoo>
