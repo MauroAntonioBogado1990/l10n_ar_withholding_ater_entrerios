@@ -61,6 +61,10 @@
                   action="action_account_export_ater_entrerios"
                   parent="l10n_ar.account_reports_ar_statements_menu"
                   sequence="7"/>
-
+        
+        <menuitem id="menu_account_export_ater_entrerios"
+                  action="action_account_export_ater_entrerios"
+                  parent="account.menu_finance_reports"
+                  sequence="7"/>
     </data>
 </odoo>
